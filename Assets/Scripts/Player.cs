@@ -3,7 +3,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public BaseStats stats;
-    private WeaponData weapon; public float range;
+    private WeaponData weapon; 
+    public float range;
 
 
     private void Awake()
@@ -12,21 +13,19 @@ public class Player : MonoBehaviour
 
         weapon = new WeaponData("Pistol", 5);
 
-    }
+    } 
+    public WeaponData Weapon => weapon;
+
     void Start()
     {
         InvokeRepeating("AutoAttackEnemies", 1f, 1f);
     }
 
 
-
-
     void Update()
     {
 
     }
-
-
 
 
     public void AutoAttackEnemies()
